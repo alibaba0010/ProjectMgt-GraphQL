@@ -1,9 +1,9 @@
 import pkg from 'mongoose';
 const { connect, connection } = pkg;
 
-const connectDB = (url) => {
+const connectDB = async (url) => {
   connection.once("open", () => console.log("MongoDB connected"));
-  return connect(url);
+  return await connect(url);
 };
 
 export default connectDB;
